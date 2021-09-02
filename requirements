@@ -1,0 +1,13 @@
+certifi==2021.5.30
+cycler==0.10.0
+kiwisolver==1.1.0
+matplotlib==3.1.2
+numpy==1.19.5
+Pillow==7.0.0
+pyparsing==2.4.6
+python-dateutil==2.8.1
+six==1.14.0
+torch==1.9.0
+torchvision==0.10.0
+clint==0.5.1
+requests==2.25.1
