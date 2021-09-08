@@ -3,13 +3,11 @@ from PIL import Image
 from keras_preprocessing.image import img_to_array
 from src.trainer import model1
 import numpy as np
-from skimage.transform import resize
 
 
 def predict_image(image_input, classifier):
-    classifier = model1
-    x = img_to_array(image_input)
-    predict_modified = image.x
+    predict = image.load_img(image_input, target_size = (64, 64))
+    predict_modified = image.img_to_array(predict)
     predict_modified = predict_modified / 255
     predict_modified = np.expand_dims(predict_modified, axis=0)
     result = classifier.predict(predict_modified)
