@@ -1,4 +1,3 @@
-import PIL.Image
 import streamlit as st
 from PIL import Image
 from keras_preprocessing.image import img_to_array
@@ -7,9 +6,9 @@ import numpy as np
 from skimage.transform import resize
 
 
-def predict_image(image_load, classifier):
+def predict_image(image_input, classifier):
     classifier = model1
-    x = img_to_array(image_load)
+    x = img_to_array(image_input)
     predict_modified = image.x
     predict_modified = predict_modified / 255
     predict_modified = np.expand_dims(predict_modified, axis=0)
@@ -30,13 +29,11 @@ def main():
 
     # loading image cat or dog
     image_load = st.sidebar.file_uploader("Cat and Dog image ", type=['png', 'jpg', 'jpeg'],
-                                              accept_multiple_files=False)
+                                          accept_multiple_files=False)
 
     if image_load is not None:
         u_img = Image.open(image_load)
         st.image(u_img, 'Uploaded Image', use_column_width=True)
-        image = np.asarray(u_img) / 255
-        my_image = resize(image, (64, 64)).reshape((1, 64 * 64 * 3)).T
         st.write('')
 
     col1, col2 = st.beta_columns(2)
