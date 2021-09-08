@@ -1,8 +1,6 @@
-import torch.optim as optim
-from src.model import CNN1
 from src.trainer import train, model1
 from src.tester import test
-from src.loadingdata import input_size, output_size, get_n_params
+
 
 
 def work1():
